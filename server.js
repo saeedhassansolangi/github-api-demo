@@ -38,7 +38,7 @@ app.post("/user", (req, res) => {
             .then(response => response.json())
             .then(userData => {
             res.render("user",{userData})
-        })
+        }).catch(err=>console.log(err))
         
         // res.send("hellow")
     } else {
