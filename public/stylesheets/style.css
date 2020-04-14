@@ -1,5 +1,19 @@
 .search{
-    box-shadow: 10px 10px 10px 2px gray 10px ;
-    background-color: cadetblue;
+  width: 300px;
+  height: 400px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.containers{
+    background-color: #4287f5;
+    height: 100vh;
+    color: white;
+}
+
+.error{
+    background-color: black;
     height: 100vh;
 }
