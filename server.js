@@ -35,17 +35,24 @@ app.post("/user", (req, res) => {
     let query = req.body.search;
     console.log(typeof query);
     if (query !== "") {
-        console.log(`${API}${query}`);
+        console.log(`${API}${query}`, {
+             method: "GET",
+             headers: {
+            "Accept": "application/vnd.github.v3+json"
+  },
+        });
         fetch(`${API}${query}`)
             .then(response => response.json())
             .then(userData => {
-                console.log(userData);
+                // console.log(userData);
                 
                 if (query === userData.login) {
                     res.render("user", {
                         userData
                     })
                 } else {
+                    // console.log(userData);
+                    
                     res.render("error",{userData})
                     console.log("user is not found");
 
