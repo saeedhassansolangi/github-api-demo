@@ -26,7 +26,7 @@ app.get("/user/error", (req, res) => {
 })
 
 
-app.post("/user/error", (req, res) => {
+app.post("/user", (req, res) => {
     let query = req.body.search;
     // console.log(typeof query);
     if (query !== "") {
