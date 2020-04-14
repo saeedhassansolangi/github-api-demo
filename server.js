@@ -1,12 +1,15 @@
 const express = require("express");
 const bodyparser = require("body-parser");
 const fetch = require("node-fetch");
+const morgan = require("morgan");
 const app = express();
 require('dotenv').config()
 const PORT = process.env.PORT
 const API = process.env.API
 
 
+
+app.use(morgan("dev"))
 app.use(bodyparser.urlencoded({
     extended: true
 }))
@@ -27,7 +30,7 @@ app.post("/user/error", (req, res) => {
     let query = req.body.search;
     // console.log(typeof query);
     if (query !== "") {
-        console.log(`${API}${query}`);
+        // console.log(`${API}${query}`);
         fetch(`${API}${query}`,{
              method: "GET",
              headers: {
