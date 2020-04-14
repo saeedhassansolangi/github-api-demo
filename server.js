@@ -39,7 +39,7 @@ app.post("/user", (req, res) => {
         })
             .then(response => response.json())
             .then(userData => {
-                // console.log(userData);
+                console.log(userData);
                 
                 if (query === userData.login) {
                     res.render("user", {

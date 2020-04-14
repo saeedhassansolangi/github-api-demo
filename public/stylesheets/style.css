@@ -29,3 +29,29 @@
   color: lightslategray; 
   background-color: white;
 }
+.jumbotrons{
+
+	min-height: 100vh;
+	background-image: linear-gradient(rgb(189, 187, 187), #c0d3c3);
+	--img-url: url(https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=350&h=350&fit=crop&crop=faces);
+}
+
+
+.headshot {
+	flex-shrink: 0;
+	margin: 20px;
+	height: calc(150px + 6vw);
+	width: calc(150px + 6vw);
+	border: calc(8px + 0.2vw) solid transparent;
+	background-origin: border-box;
+	background-clip: content-box, border-box;
+	background-size: cover;
+	box-sizing: border-box;
+	box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.5);
+}
+
+.headshot-2 {
+	border-radius: 50%;
+  background-image: var(--img-url),
+   linear-gradient(to bottom right, #517ac7, #3bcc62, #81bee9);
+}

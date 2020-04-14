@@ -1,14 +1,45 @@
 <%-include("partials/headers")%>
-<%=userData.login%>
-<img src="<%=userData.avatar_url%>" alt="image not found" id="image">
+<div class="jumbotrons">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-6" style="text-align: center;">
+                <img src="<%=userData.avatar_url%>" class="headshot headshot-2" alt="image not found" id="image">
+                <p> <%=userData.name%> </p>
+                <span style="display: block;"><i class="fas fa-user"></i> <strong><%=userData.login%></strong></span>
+                <span> <i class="fab fa-github"></i> <%=userData.html_url%></span>
+                <p class="mt-3" ><span style="border-bottom: 3px blue solid;"><%=userData.bio%></span></p>
+            </div>
+            <div class="col-md-6s">
+            </div>
+            <ul class="list-group">
+                <li class="list-group-item active ">Last Updated <span
+                        class="badge badge-primary"><%=userData.updated_at%></span></li>
+                <li class="list-group-item ">Followers <span class="badge badge-primary"><%=userData.followers%></span>
+                </li>
+                <li class="list-group-item">Following <span class="badge badge-primary"><%=userData.following%></span>
+                </li>
+                <li class="list-group-item">Public Repositories <span class="badge badge-warning">
+                        <%=userData.public_repos%></span></li>
+                <li class="list-group-item">Account Created <span
+                        class="badge badge-primary"><%=userData.created_at%></span></li>
+
+            </ul>
+
+        </div>
+    </div>
 
 
-<p>Name :<%=userData.name%></p>
-<p>Campany :<%=userData.company%></p>
-<p>Location :<%=userData.location%></p>
-<p>Bio :<%=userData.bio%></p>
-<p>Public Repos :<%=userData.public_repos%></p>
-<p>Followers :<%=userData.followers%></p>
-<p>Following :<%=userData.following%></p>
-<p>Account Created :<%=userData.created_at%></p>
-<p>Last Updated :<%=userData.updated_at%></p>
+    <ul class="nav justify-content-center">
+        <li class="nav-item m-2"><i class="fas fa-user-friends"></i> <%=userData.company%></li>
+        <li class="nav-item m-2"><i class="fas fa-map-marker-alt"></i> <%=userData.location%></li>
+
+    </ul>
+
+
+
+
+
+    <p></p>
+    <p></p>
+</div>
