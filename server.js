@@ -27,13 +27,13 @@ app.post("/user/error", (req, res) => {
     let query = req.body.search;
     // console.log(typeof query);
     if (query !== "") {
-        console.log(`${API}${query}`, {
+        console.log(`${API}${query}`);
+        fetch(`${API}${query}`,{
              method: "GET",
              headers: {
             "Accept": "application/vnd.github.v3+json"
   },
-        });
-        fetch(`${API}${query}`)
+        })
             .then(response => response.json())
             .then(userData => {
                 // console.log(userData);
