@@ -17,3 +17,15 @@
     background-color: black;
     height: 100vh;
 }
+
+#img-home{
+  width: 100px; 
+  margin-left: 80px;
+}
+
+#div-error{
+  margin: 0 auto;
+  text-align:center;
+  color: lightslategray; 
+  background-color: white;
+}

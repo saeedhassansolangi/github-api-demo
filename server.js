@@ -6,18 +6,7 @@ require('dotenv').config()
 const PORT = process.env.PORT
 const API = process.env.API
 
-// const URL = "https://api.github.com/users/saeedhassansolangi";
-// const URL = "https://api.github.com/users/";
-// let query = "saeedhassansolangi"
 
-// let user = API + query
-
-// fetch(user)
-//     .then(response => response.json())
-//     .then(body => {
-//         console.log(body);
-
-//     }).catch(err=>console.log(err))
 app.use(bodyparser.urlencoded({
     extended: true
 }))
@@ -25,15 +14,18 @@ app.set("view engine", "ejs");
 app.use(express.static("public"))
 
 app.get("/", (req, res) => {
-    // res.send("Welcome to the GITHUB API")
     res.render("home")
 })
 
 
+app.get("/user/error", (req, res) => {
+    res.render("error")
+})
 
-app.post("/user", (req, res) => {
+
+app.post("/user/error", (req, res) => {
     let query = req.body.search;
-    console.log(typeof query);
+    // console.log(typeof query);
     if (query !== "") {
         console.log(`${API}${query}`, {
              method: "GET",
@@ -52,15 +44,13 @@ app.post("/user", (req, res) => {
                     })
                 } else {
                     // console.log(userData);
-                    
                     res.render("error",{userData})
-                    console.log("user is not found");
 
                 }
 
             })
     } else {
-        res.send("Plz give correct username")
+            res.redirect("back")
     }
 
 })
