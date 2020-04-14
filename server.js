@@ -16,9 +16,11 @@ const API = process.env.API
 //     .then(response => response.json())
 //     .then(body => {
 //         console.log(body);
-        
+
 //     }).catch(err=>console.log(err))
-app.use(bodyparser.urlencoded({extended:true}))
+app.use(bodyparser.urlencoded({
+    extended: true
+}))
 app.set("view engine", "ejs");
 app.use(express.static("public"))
 
@@ -37,17 +39,26 @@ app.post("/user", (req, res) => {
         fetch(`${API}${query}`)
             .then(response => response.json())
             .then(userData => {
-            res.render("user",{userData})
-        })
-        
-        // res.send("hellow")
+                console.log(userData);
+                
+                if (query === userData.login) {
+                    res.render("user", {
+                        userData
+                    })
+                } else {
+                    res.render("error",{userData})
+                    console.log("user is not found");
+
+                }
+
+            })
     } else {
         res.send("Plz give correct username")
     }
-    
+
 })
 
 
 
 
-app.listen(PORT,_=>console.log(`Server is Running on the PORT ${PORT}`))
+app.listen(PORT, _ => console.log(`Server is Running on the PORT ${PORT}`))
