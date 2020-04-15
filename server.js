@@ -31,37 +31,39 @@ app.post("/user", (req, res) => {
     // console.log(typeof query);
     if (query !== "") {
         // console.log(`${API}${query}`);
-        fetch(`${API}${query}`,{
-             method: "GET",
-             headers: {
-            "Accept": "application/vnd.github.v3+json"
-  },
-        })
+        fetch(`${API}${query}`, {
+                method: "GET",
+                headers: {
+                    "Accept": "application/vnd.github.v3+json"
+                },
+            })
             .then(response => response.json())
             .then(userData => {
                 // console.log(userData);
-                
+
                 if (query === userData.login) {
                     // https://api.github.com/users/saeedhassansolangi/repos
                     fetch(`${API}${ query }/repos`)
                         .then(response => response.json())
                         .then(userRepos => {
-                             res.render("user", {
-                                 userData,
-                                 userRepos
-                    })
+                            res.render("user", {
+                                userData,
+                                userRepos
+                            })
                         })
-                    .catch(err =>console.log(err))
-                   
+                        .catch(err => console.log(err))
+
                 } else {
                     console.log(userData);
-                    res.render("error",{userData})
+                    res.render("error", {
+                        userData
+                    })
 
                 }
 
-            })
+            }).catch(err => console.log(err))
     } else {
-            res.redirect("back")
+        res.redirect("back")
     }
 
 })
