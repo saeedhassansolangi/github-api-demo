@@ -1,5 +1,6 @@
 <%-include("partials/headers")%>
 <div class="jumbotrons ">
+  
     <div class="container">
         <div class="row ">
             <div class="col-md-4" style="text-align: center;">
@@ -35,10 +36,18 @@
 
     </ul>
 
+  
+
+
+<div class="row container text-center">
+    
+  <%userRepos.forEach(repo =>{%>
+        <div class="col-md-3 col-sm-6">
+           <h2 > <%=repo.name%></h4>
+            </div>
+        <%})%>
+</div>
 
 
 
-
-    <p></p>
-    <p></p>
 </div>

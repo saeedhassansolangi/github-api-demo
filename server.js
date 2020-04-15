@@ -39,18 +39,22 @@ app.post("/user", (req, res) => {
         })
             .then(response => response.json())
             .then(userData => {
-                console.log(userData);
+                // console.log(userData);
                 
                 if (query === userData.login) {
                     // https://api.github.com/users/saeedhassansolangi/repos
                     fetch(`${API}${ query }/repos`)
                         .then(response => response.json())
-                        .then(userRepos =>console.log(userRepos))
-                    res.render("user", {
-                        userData
+                        .then(userRepos => {
+                             res.render("user", {
+                                 userData,
+                                 userRepos
                     })
+                        })
+                    .catch(err =>console.log(err))
+                   
                 } else {
-                    // console.log(userData);
+                    console.log(userData);
                     res.render("error",{userData})
 
                 }
