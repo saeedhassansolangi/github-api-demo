@@ -42,6 +42,10 @@ app.post("/user", (req, res) => {
                 console.log(userData);
                 
                 if (query === userData.login) {
+                    // https://api.github.com/users/saeedhassansolangi/repos
+                    fetch(`${API}${ query }/repos`)
+                        .then(response => response.json())
+                        .then(userRepos =>console.log(userRepos))
                     res.render("user", {
                         userData
                     })
