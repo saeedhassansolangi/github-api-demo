@@ -14,7 +14,7 @@
             </div>
             <ul class="list-group mt-4 ml-5">
                 <li class="list-group-item list-group-item-dark  ">Last Updated <span
-                        class="badge badge-primary"><%=updated_at.udate%> <%=updated_at.umonth%> <%=updated_at.uyear%> </span></li>
+                        class="badge badge-primary"> <%=updated_at.dateStringUp%></span></li>
                 <li class="list-group-item list-group-item-dark">Followers <span
                         class="badge badge-primary"><%=userData.followers%></span>
                 </li>
@@ -24,7 +24,7 @@
                 <li class="list-group-item list-group-item-dark">Public Repositories <span class="badge badge-warning">
                         <%=userData.public_repos%></span></li>
                 <li class="list-group-item list-group-item-dark">Joined <span
-                        class="badge badge-primary"><%=created_at.date%> <%=created_at.month%> <%=created_at.year%> </span></li>
+                        class="badge badge-primary"> <%=created_at.dateString%> </span></li>
 
             </ul>
 

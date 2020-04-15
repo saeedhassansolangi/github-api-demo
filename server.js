@@ -45,23 +45,44 @@ app.post("/user", (req, res) => {
                 var created = new Date(userData.created_at);
                 var updated = new Date(userData.updated_at);
                 
-                const date = created.getUTCDate();
-                const year = created.getUTCFullYear();
-                const month = created.getUTCMonth();
+                // const date = created.getUTCDate();
+                // const year = created.getUTCFullYear();
+                // const month = created.getUTCMonth();
+                // const time = created.toTimeString().substring(0, 8);
+                const dateString = created.toDateString()
+                // console.log(dateString);
+                
+                
+                
+                // const created_at = {
+                //     date,
+                //     year,
+                //     month,
+                //     dateString
+                // }
+
                 const created_at = {
-                    date,
-                    year,
-                    month
+                                    dateString
+                                }
+
+
+                // const udate =  updated.getUTCDate();
+                // const uyear =  updated.getUTCFullYear();
+                // const umonth = updated.getUTCMonth();
+                const dateStringUp = updated.toDateString()
+                console.log(dateStringUp);
+                
+                
+                // const updated_at = {
+                //     udate,
+                //     uyear,
+                //     umonth
+                // }
+
+                const updated_at = {
+                    dateStringUp
                 }
 
-                const udate =  updated.getUTCDate();
-                const uyear =  updated.getUTCFullYear();
-                const umonth = updated.getUTCMonth();
-                const updated_at = {
-                    udate,
-                    uyear,
-                    umonth
-                }
                 // console.log(updated_at.toDateString());
                 // console.log(created_at.toDateString());        
                 // console.log(d.getUTCDate()); // Hours
