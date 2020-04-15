@@ -38,14 +38,23 @@
 
   
 
-
-<div class="row container text-center">
-    
+<div class="container">
+<div class="row ">
   <%userRepos.forEach(repo =>{%>
-        <div class="col-md-3 col-sm-6">
-           <h2 > <%=repo.name%></h4>
+        <div class="col-md-4 col-sm-6" >
+            <div class="card "  style="height:auto" >
+                <div class="card-body">
+                    <div class="card-title">
+                        <h4 > <%=repo.name%></h4>
+                    </div>
+                    <div class="card-text">
+                        <p> <%=repo.description%></p>
+                    </div>
+            </div>
+            </div>
             </div>
         <%})%>
+</div>
 </div>
 
 
