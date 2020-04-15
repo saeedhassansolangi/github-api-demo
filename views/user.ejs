@@ -1,6 +1,6 @@
 <%-include("partials/headers")%>
 <div class="jumbotrons ">
-  
+
     <div class="container">
         <div class="row ">
             <div class="col-md-4" style="text-align: center;">
@@ -8,16 +8,18 @@
                 <p> <%=userData.name%> </p>
                 <span style="display: block;"><i class="fas fa-user"></i> <strong><%=userData.login%></strong></span>
                 <span> <i class="fab fa-github"></i> <%=userData.html_url%></span>
-                <p class="mt-3" ><span style="border-bottom: 3px blue solid;"><%=userData.bio%></span></p>
+                <p class="mt-3"><span style="border-bottom: 3px blue solid;"><%=userData.bio%></span></p>
             </div>
             <div class="col-md-4">
-                </div>
+            </div>
             <ul class="list-group mt-4 ml-4">
                 <li class="list-group-item list-group-item-dark  ">Last Updated <span
                         class="badge badge-primary"><%=userData.updated_at%></span></li>
-                <li class="list-group-item list-group-item-dark">Followers <span class="badge badge-primary"><%=userData.followers%></span>
+                <li class="list-group-item list-group-item-dark">Followers <span
+                        class="badge badge-primary"><%=userData.followers%></span>
                 </li>
-                <li class="list-group-item list-group-item-dark">Following <span class="badge badge-primary"><%=userData.following%></span>
+                <li class="list-group-item list-group-item-dark">Following <span
+                        class="badge badge-primary"><%=userData.following%></span>
                 </li>
                 <li class="list-group-item list-group-item-dark">Public Repositories <span class="badge badge-warning">
                         <%=userData.public_repos%></span></li>
@@ -36,29 +38,29 @@
 
     </ul>
 
-  
 
-<div class="container">
-    <hr>
-    <h4>Your Github Repositories</h4>
-<div class="row ">
-  <%userRepos.forEach(repo =>{%>
-        <div class="col-md-4 col-sm-6" >
-            <div class="card m-1"  style="height:200px" >
-                <div class="card-body">
-                    <div class="card-title">
-                        <h4 > <%=repo.name%></h4>
+
+    <div class="container">
+        <hr>
+        <h4>Your Github Repositories</h4>
+        <div class="row ">
+            <%userRepos.forEach(repo =>{%>
+            <div class="col-md-4 col-sm-6">
+                <div class="card m-1" style="height:200px">
+                    <div class="card-body">
+                        <div class="card-title">
+                            <h4> <%=repo.name%></h4>
+                        </div>
+                        <div class="card-text">
+                            <p> <%=repo.description%></p>
+
+                        </div>
                     </div>
-                    <div class="card-text">
-                        <p> <%=repo.description%></p>
-                    </div>
+                </div>
             </div>
-            </div>
-            </div>
-        <%})%>
-</div>
+            <%})%>
+        </div>
+    </div>
+    <%-include("partials/footer")%>
 </div>
 
-
-
-</div>
