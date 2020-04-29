@@ -1,3 +1,7 @@
+body{
+  font-family: 'Ubuntu', sans-serif;
+}
+
 .search{
   width: 300px;
   height: 400px;
@@ -32,7 +36,7 @@
 .jumbotrons{
 
 	min-height: 100vh;
-	background-image: linear-gradient(rgb(218, 214, 214), #c0d3c3);
+	background-image: linear-gradient(#c0d3c3, #c0d3c3);
 	
 }
 
@@ -55,3 +59,11 @@
   background-image: var(--img-url),
    linear-gradient(to bottom right, #517ac7, #3bcc62, #81bee9);
 }
+.repo-desc{
+font-family: 'Fredoka One', cursive;
+}
+
+.user-bio{
+letter-spacing: 6px;
+}
+

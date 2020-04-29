@@ -4,12 +4,10 @@ const fetch = require("node-fetch");
 const morgan = require("morgan");
 const moment = require("moment");
 const app = express();
-require('dotenv').config()
-const PORT = process.env.PORT
-const API = process.env.API
-
-// API = "https://api.github.com/users/"
-
+require('dotenv').config();
+const PORT = process.env.PORT;
+const API = process.env.API;
+// const TOKEN = process.env.TOKEN;
 
 app.use(morgan("dev"))
 app.use(bodyparser.urlencoded({
@@ -22,11 +20,9 @@ app.get("/", (req, res) => {
     res.render("home")
 })
 
-
 app.get("/user/error", (req, res) => {
     res.render("error")
 })
-
 
 app.post("/user", (req, res) => {
     let query = req.body.search;
