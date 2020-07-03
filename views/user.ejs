@@ -9,34 +9,30 @@
                 <span style="display: block;"><i class="fas fa-user"></i> <strong><%=userData.login%></strong></span>
                 <span> <i class="fab fa-github"></i> <a href="<%=userData.html_url%>"><%=userData.html_url%></a></span>
                 <p class="mt-3"><span class="user-bio"><%=userData.bio%></span></p>
+                <ul class="nav justify-content-center" st>
+                    <li class="nav-item m-2"><i class="fas fa-user-friends"></i> <%=userData.company%></li>
+                    <li class="nav-item m-2"><i class="fas fa-map-marker-alt"></i> <%=userData.location%></li>
+                </ul>
             </div>
+
+
             <div class="col-md-4">
             </div>
-            <ul class="list-group mt-4 ml-5">
-                <li class="list-group-item list-group-item-dark  ">Last Updated at <span class="badge badge-primary">
-                        <%=updated_at.dateStringUp%></span></li>
-                <li class="list-group-item list-group-item-dark">Followers <span
-                        class="badge badge-primary"><%=userData.followers%></span>
+            <ul class="row container">
+                <li class="col-md-3">Last Updated at
+                    <span class="badge badge-primary"> <%=updated_at.dateStringUp%></span></li>
+                <li class="col-md-2">Followers <span class="badge badge-primary"><%=userData.followers%></span> </li>
+                <li class="col-md-2">Following <span class="badge badge-primary"><%=userData.following%></span> </li>
+                <li class="col-md-3">Public Repositories <span
+                        class="badge badge-warning"><%=userData.public_repos%></span></li>
+                <li class="auto">Joined at <span class="badge badge-primary"> <%=created_at.dateString%> </span>
                 </li>
-                <li class="list-group-item list-group-item-dark">Following <span
-                        class="badge badge-primary"><%=userData.following%></span>
-                </li>
-                <li class="list-group-item list-group-item-dark">Public Repositories <span class="badge badge-warning">
-                        <%=userData.public_repos%></span></li>
-                <li class="list-group-item list-group-item-dark">Joined at <span class="badge badge-primary">
-                        <%=created_at.dateString%> </span></li>
 
             </ul>
 
         </div>
     </div>
 
-
-    <ul class="nav justify-content-center">
-        <li class="nav-item m-2"><i class="fas fa-user-friends"></i> <%=userData.company%></li>
-        <li class="nav-item m-2"><i class="fas fa-map-marker-alt"></i> <%=userData.location%></li>
-
-    </ul>
 
 
 
