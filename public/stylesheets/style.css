@@ -1,8 +1,18 @@
-body{
+body {
   font-family: 'Ubuntu', sans-serif;
+  background-color: rgb(10, 25, 47);
+  color: rgb(136, 146, 176);
 }
 
-.search{
+a {
+  color: rgb(136, 146, 176);
+}
+
+a:hover {
+  color: rgb(192, 197, 214);
+}
+
+.search {
   width: 300px;
   height: 400px;
   position: absolute;
@@ -11,59 +21,54 @@ body{
   transform: translate(-50%, -50%);
 }
 
-.containers{
-    background-color: #4287f5;
-    height: 100vh;
-    color: white;
+
+
+.containers {
+  height: 100vh;
+
 }
 
-.error{
-    background-color: black;
-    height: 100vh;
+.error {
+  height: 100vh;
 }
 
-#img-home{
-  width: 100px; 
+#img-home {
+  width: 100px;
   margin-left: 80px;
 }
 
-#div-error{
+#div-error {
   margin: 0 auto;
-  text-align:center;
-  color: lightslategray; 
+  text-align: center;
+  color: lightslategray;
   background-color: white;
 }
-.jumbotrons{
 
-	min-height: 100vh;
-	background-image: linear-gradient(#c0d3c3, #c0d3c3);
-	
-}
 
 
 .headshot {
-	flex-shrink: 0;
-	margin: 20px;
-	height: calc(150px + 6vw);
-	width: calc(150px + 6vw);
-	border: calc(8px + 0.2vw) solid transparent;
-	background-origin: border-box;
-	background-clip: content-box, border-box;
-	background-size: cover;
-	box-sizing: border-box;
-	box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.5);
+  flex-shrink: 0;
+  margin: 20px;
+  height: calc(150px + 6vw);
+  width: calc(150px + 6vw);
+  border: calc(8px + 0.2vw) solid transparent;
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  background-size: cover;
+  box-sizing: border-box;
+  box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.5);
 }
 
 .headshot-2 {
-	border-radius: 50%;
+  border-radius: 50%;
   background-image: var(--img-url),
-   linear-gradient(to bottom right, #517ac7, #3bcc62, #81bee9);
-}
-.repo-desc{
-font-family: 'Fredoka One', cursive;
+    linear-gradient(to bottom right, #517ac7, #3bcc62, #81bee9);
 }
 
-.user-bio{
-letter-spacing: 6px;
+.repo-desc {
+  font-family: 'Fredoka One', cursive;
 }
 
+.user-bio {
+  letter-spacing: 6px;
+}
