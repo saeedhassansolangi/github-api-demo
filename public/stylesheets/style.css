@@ -1,5 +1,5 @@
 body {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
   background-color: rgb(10, 25, 47);
   color: rgb(136, 146, 176);
 }
@@ -23,7 +23,6 @@ a:hover {
 
 .containers {
   height: 100vh;
-
 }
 
 .error {
@@ -41,7 +40,6 @@ a:hover {
   background-color: rgb(10, 25, 47);
   color: rgb(136, 146, 176);
 }
-
 
 .headshot {
   flex-shrink: 0;
@@ -63,18 +61,21 @@ a:hover {
 }
 
 .repo-desc {
-  font-family: 'Fredoka One', cursive;
+  font-family: "Fredoka One", cursive;
 }
 
 .user-bio {
   letter-spacing: 6px;
 }
 
-@media(max-width:600px) {
+@media (max-width: 600px) {
   .extra {
     display: block;
     width: 100%;
     margin: auto;
     text-align: center;
+  }
+  .repo-header {
+    font-size: 20px;
   }
 }
