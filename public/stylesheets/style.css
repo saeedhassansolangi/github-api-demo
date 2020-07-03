@@ -21,8 +21,6 @@ a:hover {
   transform: translate(-50%, -50%);
 }
 
-
-
 .containers {
   height: 100vh;
 
@@ -40,10 +38,9 @@ a:hover {
 #div-error {
   margin: 0 auto;
   text-align: center;
-  color: lightslategray;
-  background-color: white;
+  background-color: rgb(10, 25, 47);
+  color: rgb(136, 146, 176);
 }
-
 
 
 .headshot {
@@ -71,4 +68,13 @@ a:hover {
 
 .user-bio {
   letter-spacing: 6px;
+}
+
+@media(max-width:600px) {
+  .extra {
+    display: block;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+  }
 }

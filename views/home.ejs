@@ -1,12 +1,22 @@
 <%-include("partials/headers")%>
 
-
 <div class="search">
-    <img src="/images/Octocat.png" style="width: 100px; margin-left: 80px;" alt="avatar not found">
-    <h5 style="text-align: center;">Find Your Github Account </h5>
-    <form class="form-group" action="/user" method="POST">
-        <label for="search">Username Here </label>
-        <input placeholder="write your github username ..." class="form-control" id="search" type="text" name="search">
-        <button class="btn btn-md btn-primary m-2">Search</button>
-    </form>
+  <img
+    src="/images/Octocat.png"
+    style="width: 40%; margin-left: 80px;"
+    alt="avatar not found"
+  />
+  <h5 style="text-align: center;">Find Your Github Account</h5>
+  <form class="form-group" action="/user" method="POST">
+    <label for="search">Username Here </label>
+    <input
+      dir="ltr"
+      placeholder="write your github username ..."
+      class="form-control"
+      id="search"
+      type="text"
+      name="search"
+    />
+    <button class="btn btn-md btn-primary m-2">Search</button>
+  </form>
 </div>
