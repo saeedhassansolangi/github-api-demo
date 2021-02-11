@@ -1,7 +1,14 @@
 body {
-  font-family: "Ubuntu", sans-serif;
-  background-color: rgb(10, 25, 47);
+  font-family: 'Ubuntu', sans-serif;
+  background-color: #121212;
   color: rgb(136, 146, 176);
+}
+
+#search {
+  background-color: #272727;
+  font-size: 20px;
+  padding: 20px;
+  color: gray;
 }
 
 a {
@@ -61,7 +68,7 @@ a:hover {
 }
 
 .repo-desc {
-  font-family: "Fredoka One", cursive;
+  font-family: 'Fredoka One', cursive;
 }
 
 .user-bio {
