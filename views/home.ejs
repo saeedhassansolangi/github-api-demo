@@ -3,10 +3,10 @@
 <div class="search">
   <img
     src="/images/Octocat.png"
-    style="width: 40%; margin-left: 80px; margin-top: 10px;"
+    id="avatar-img"
     alt="avatar not found"
   />
-  <h5 style="text-align: center; margin-top: 10px;">Find Your Github Account</h5>
+  <h5 id="header"">Find Your Github Account</h5>
   <form class="form-group" action="/user" method="POST">
     <label for="search">Username Here </label>
     <input
@@ -17,6 +17,6 @@
       type="text"
       name="search"
     />
-    <button class="btn btn-md btn-primary m-2">Search</button>
+    <button class="btn-search">Search</button>
   </form>
 </div>

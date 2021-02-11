@@ -7,8 +7,44 @@ body {
 #search {
   background-color: #272727;
   font-size: 20px;
-  padding: 20px;
+  padding: 30px;
   color: gray;
+  border: none;
+  border-radius: 10px;
+}
+
+#search:focus,
+#search:hover,
+.btn-search:focus,
+.btn-search:hover {
+  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+    0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12);
+}
+
+.btn-search:hover {
+  opacity: 0.8;
+}
+
+#header {
+  text-align: center;
+  margin-top: 10px;
+}
+
+#avatar-img {
+  width: 30%;
+  margin-left: 170px;
+  margin-top: 10px;
+}
+
+.btn-search {
+  background-color: #6002ee;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 10px;
+  margin: 10px;
+  border: none;
+  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+    0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12);
 }
 
 a {
@@ -20,7 +56,7 @@ a:hover {
 }
 
 .search {
-  width: 300px;
+  width: 500px;
   height: 400px;
   position: absolute;
   left: 50%;
