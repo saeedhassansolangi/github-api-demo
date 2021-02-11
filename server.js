@@ -1,43 +1,41 @@
-const express = require("express");
-const bodyparser = require("body-parser");
-const fetch = require("node-fetch");
-const morgan = require("morgan");
+const express = require('express');
+const bodyparser = require('body-parser');
+const fetch = require('node-fetch');
+const morgan = require('morgan');
 const app = express();
-require("dotenv").config();
+require('dotenv').config();
 const PORT = process.env.PORT;
 const API = process.env.API;
 
-app.use(morgan("dev"));
+app.use(morgan('dev'));
 app.use(
   bodyparser.urlencoded({
     extended: true,
   })
 );
-app.set("view engine", "ejs");
-app.use(express.static("public"));
+app.set('view engine', 'ejs');
+app.use(express.static('public'));
 
-app.get("/", (req, res) => {
-  res.render("home");
+app.get('/', (req, res) => {
+  res.render('home');
 });
 
-app.get("/user/error", (req, res) => {
-  res.render("error");
+app.get('/user/error', (req, res) => {
+  res.render('error');
 });
 
-app.post("/user", (req, res) => {
+app.post('/user', (req, res) => {
   let query = req.body.search;
-  // console.log(typeof query);
-  if (query !== "") {
-    // console.log(`${API}${query}`);
+  if (query !== '') {
     fetch(`${API}${query}`, {
-      method: "GET",
+      method: 'GET',
       headers: {
-        Accept: "application/vnd.github.v3+json",
+        Accept: 'application/vnd.github.v3+json',
+        Authorization: `token ${process.env.API_KEY}`,
       },
     })
       .then((response) => response.json())
       .then((userData) => {
-        // console.log(userData);
         var created = new Date(userData.created_at);
         var updated = new Date(userData.updated_at);
         const dateString = created.toDateString();
@@ -45,10 +43,16 @@ app.post("/user", (req, res) => {
         const dateStringUp = updated.toDateString();
         const updated_at = { dateStringUp };
         if (query === userData.login) {
-          fetch(`${API}${query}/repos`)
+          fetch(`${API}${query}/repos`, {
+            method: 'GET',
+            headers: {
+              Accept: 'application/vnd.github.v3+json',
+              Authorization: `token ${process.env.API_KEY}`,
+            },
+          })
             .then((response) => response.json())
             .then((userRepos) => {
-              res.render("user", {
+              res.render('user', {
                 userData,
                 userRepos,
                 created_at,
@@ -58,15 +62,32 @@ app.post("/user", (req, res) => {
             .catch((err) => console.log(err));
         } else {
           console.log(userData);
-          res.render("error", {
+          res.render('error', {
             userData,
           });
         }
       })
       .catch((err) => console.log(err));
   } else {
-    res.redirect("back");
+    res.redirect('back');
   }
+});
+
+app.get('/autocomplete', (req, res) => {
+  fetch(`https://api.github.com/search/users?q=${req.query.term}&per_page=10`, {
+    method: 'GET',
+    headers: {
+      Accept: 'application/vnd.github.v3+json',
+      Authorization: `token ${process.env.API_KEY}`,
+    },
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      res.send(data.items);
+      console.log(data.items.length);
+    });
 });
 
 app.listen(PORT, (_) => console.log(`Server is Running on the PORT ${PORT}`));
