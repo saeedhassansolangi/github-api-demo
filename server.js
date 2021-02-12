@@ -31,7 +31,6 @@ app.post('/user', (req, res) => {
       method: 'GET',
       headers: {
         Accept: 'application/vnd.github.v3+json',
-        Authorization: `token ${process.env.API_KEY}`,
       },
     })
       .then((response) => response.json())
@@ -47,7 +46,6 @@ app.post('/user', (req, res) => {
             method: 'GET',
             headers: {
               Accept: 'application/vnd.github.v3+json',
-              Authorization: `token ${process.env.API_KEY}`,
             },
           })
             .then((response) => response.json())
@@ -78,15 +76,18 @@ app.get('/autocomplete', (req, res) => {
     method: 'GET',
     headers: {
       Accept: 'application/vnd.github.v3+json',
-      Authorization: `token ${process.env.API_KEY}`,
     },
   })
     .then((response) => {
       return response.json();
     })
     .then((data) => {
+      console.log(data);
       res.send(data.items);
-      console.log(data.items.length);
+      // console.log(data.items.length);
+    })
+    .catch((error) => {
+      console.log(error);
     });
 });
 
