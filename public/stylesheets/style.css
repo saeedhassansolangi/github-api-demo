@@ -121,10 +121,37 @@ a:hover {
   .repo-header {
     font-size: 1.1rem;
   }
+
+  .search {
+    width: 300px;
+    height: 400px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  #avatar-img {
+    width: 30%;
+    margin-left: 110px;
+    margin-top: 10px;
+  }
+
+  #search {
+    background-color: #272727;
+    font-size: 15px;
+    padding: 30px;
+    color: gray;
+    border: none;
+    border-radius: 10px;
+  }
+
+  .ui-autocomplete {
+    font-size: 10px;
+  }
 }
 
 /* UI autocomplete */
-
 .ui-autocomplete {
   position: absolute;
   top: 100%;
